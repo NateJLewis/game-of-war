@@ -39,8 +39,8 @@ const shuffledDeck = deck.sort(() => Math.random() - 0.5);
  let index = 0;
  /**
   * @description Play the game;
-  * @todo This hacky at best but I rand out of time. 
-  *       If I had the time I would have build a compare function along with a war function.
+  * @todo This hacky at best but I ran out of time. 
+  *       If time permitted I would have built a compare function along with a war function.
   *       The results of each hand should be added / removed from player 1 or 2 hand depending on winner.
   */
  const playGame = () => {
