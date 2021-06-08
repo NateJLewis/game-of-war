@@ -34,3 +34,50 @@ const shuffledDeck = deck.sort(() => Math.random() - 0.5);
  const player2 = shuffledDeck.filter((value, index) => index >= 26 );
  // console.log('player2', player2, player2.length);
  
+ let hand1 = 26;
+ let hand2 = 26;
+ let index = 0;
+ /**
+  * @description Play the game;
+  * @todo This hacky at best but I rand out of time. 
+  *       If I had the time I would have build a compare function along with a war function.
+  *       The results of each hand should be added / removed from player 1 or 2 hand depending on winner.
+  */
+ const playGame = () => {
+   while ( hand2 > 0 && hand1 > 0 ) {
+     let output = '';
+     if ( player1[index].value === player2[index].value ) {
+       output = 'Tie';
+       hand2 ++;
+       hand1 ++;
+     } else if (player1[index].value > player2[index].value) {
+       output = 'Player 1';
+       hand2 --;
+     } else if (player2[index].value > player1[index].value) {
+       output = 'Player 2';
+       hand1 --;
+     }
+     // console.log(hand1, hand2);
+     if ( hand1 === 0 ) {
+       console.log();
+       console.log('WINNER: Player 2');
+       console.log();
+     } else if ( hand2 === 0 ) {
+       console.log();
+       console.log('WINNER: Player 1');
+       console.log();
+     } else {
+       console.log();
+       console.log(`Round goes to: ${output}`);
+       console.log();
+     }
+     if ( index === 25 ) {
+       index = 0;
+     } else {
+       index ++;
+     }
+   }
+ }
+ 
+ playGame();
+ 
