@@ -14,3 +14,10 @@ for (const suit of suits ) {
     });
   }
 }
+// console.log('deck', deck, deck.length);
+
+/**
+ * @description Shuffle the deck
+ */
+const shuffledDeck = deck.sort(() => Math.random() - 0.5);
+// console.log('shuffledDeck', shuffledDeck, shuffledDeck.length);
